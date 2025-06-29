@@ -1,135 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>心理測驗｜選出最適合你的課程</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Segoe UI",sans-serif;background:#f9f9f9;display:flex;justify-content:center;align-items:center;min-height:100vh}
-    #app{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);width:90%;max-width:600px;padding:24px}
-    h1{text-align:center;font-size:1.8rem;margin-bottom:16px;color:#333}
-    #question{font-size:1.1rem;margin-bottom:1rem;color:#222}
-    .option{background:#eef1f8;border:none;border-radius:8px;padding:12px;margin:8px 0;cursor:pointer;text-align:left;transition:background 0.2s}
-    .option:hover{background:#d6def0}
-    #progress{text-align:center;margin-top:12px;color:#666;font-size:0.9rem}
-    #result{display:none;text-align:center}
-    #result h2{font-size:1.5rem;color:#4a6cf7;margin-bottom:12px}
-    #result p{color:#444}
-    #restart{margin-top:20px;padding:10px 20px;background:#4a6cf7;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>一覺醒來，我成了新手巫師</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="app">
-    <h1>找出最適合你的學習課程</h1>
-    <div id="quiz">
-      <div id="question"></div>
-      <div id="options"></div>
-      <div id="progress"></div>
+  <div id="game">
+    <div id="npc">
+      🧙‍♂️ <span id="npcText">歡迎，新手巫師...</span>
     </div>
-    <div id="result">
-      <h2 id="resultTitle"></h2>
-      <p id="resultDesc"></p>
-      <button id="restart">再測一次</button>
+
+    <div id="story">
+      <p id="storyText">你一覺醒來，發現自己躺在一張古老的木床上...</p>
     </div>
+
+    <div id="choices">
+      <!-- 選項將由 JS 動態產生 -->
+    </div>
+
+    <button id="nextBtn" onclick="nextPage()">下一步</button>
   </div>
-  <script>
-    const questions = [
-      {
-        q: "最近你在做專案、活動或經營帳號時，以下哪種情境最符合你的經歷？",
-        o: [
-          { t: "有很多想法，但不知道怎麼落實，或不知道怎麼帶大家一起完成。", next: 1 },
-          { t: "經營社群帳號或做品牌內容時，常想著：我該怎麼讓更多人注意到我？", next: 2 },
-          { t: "對網站、搜尋結果出現自己名字有興趣，想了解背後運作。", next: 3 },
-          { t: "常覺得事情太多時間不夠，或專案拖延。", result: "自主學習規劃課程" }
-        ]
-      },
-      {
-        q: "如果你想讓你的計畫順利落地，你最希望能加強哪方面的能力？",
-        o: [
-          { t: "具體的規劃力與推進力。", result: "活動企劃與領導技巧課程" },
-          { t: "與不同人溝通並排除卡關的能力。", result: "公關溝通與活動實務課程" }
-        ]
-      },
-      {
-        q: "在經營社群或帳號內容時，你最希望解決什麼樣的問題？",
-        o: [
-          { t: "懂得品牌概念，並做出吸引人的內容。", result: "社群經營與行銷課程" },
-          { t: "寫出吸引點閱的文案或貼文設計排版。", result: "文案撰寫與視覺設計課程" }
-        ]
-      },
-      {
-        q: "在面對網站或貼文時，你常有什麼樣的疑惑或想解決的狀況？",
-        o: [
-          { t: "想做出品牌網站，但不知道 SEO 是什麼。", result: "網站架設與 SEO 課程" },
-          { t: "想做影音內容、podcast 等多元管道。", result: "多媒體內容製作課程" }
-        ]
-      },
-      {
-        q: "當你面對專案或學習時，你最想改善的是什麼？",
-        o: [
-          { t: "常拖延或無法執行計畫進度。", result: "自主學習規劃課程" }
-        ]
-      }
-    ];
 
-    const results = {
-      "活動企劃與領導技巧課程": "適合需要學習如何從創意轉為行動的人。",
-      "公關溝通與活動實務課程": "提升與不同團隊合作與溝通的能力。",
-      "社群經營與行銷課程": "學會品牌經營與吸引人的社群內容產出。",
-      "文案撰寫與視覺設計課程": "了解吸睛文案與視覺內容的設計技巧。",
-      "網站架設與 SEO 課程": "從零學會架設網站並理解搜尋排名關鍵。",
-      "多媒體內容製作課程": "學習影音、podcast 等新媒體製作與推廣。",
-      "自主學習規劃課程": "適合希望強化時間規劃與執行力的人。"
-    };
-
-    let current = 0;
-    let selectedPath = [];
-    const qEl = document.getElementById('question');
-    const oEl = document.getElementById('options');
-    const progress = document.getElementById('progress');
-    const quiz = document.getElementById('quiz');
-    const result = document.getElementById('result');
-    const resultTitle = document.getElementById('resultTitle');
-    const resultDesc = document.getElementById('resultDesc');
-    const restart = document.getElementById('restart');
-
-    function showQuestion(idx) {
-      const item = questions[idx];
-      qEl.textContent = item.q;
-      oEl.innerHTML = '';
-      item.o.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option';
-        btn.textContent = opt.t;
-        btn.onclick = () => {
-          if (opt.result) {
-            showResult(opt.result);
-          } else {
-            current = opt.next;
-            showQuestion(current);
-          }
-        }
-        oEl.appendChild(btn);
-      });
-      progress.textContent = `第 ${idx + 1} 題 / 共 ${questions.length} 題`;
-    }
-
-    function showResult(key) {
-      quiz.style.display = 'none';
-      result.style.display = 'block';
-      resultTitle.textContent = key;
-      resultDesc.textContent = results[key];
-    }
-
-    restart.onclick = () => {
-      current = 0;
-      quiz.style.display = 'block';
-      result.style.display = 'none';
-      showQuestion(current);
-    }
-
-    showQuestion(current);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
