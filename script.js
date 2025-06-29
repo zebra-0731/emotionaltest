@@ -59,7 +59,7 @@ function nextPage(delay = 0) {
         btn.onclick = () => {
           answers[pageIndex] = option.value;
           pageIndex++;
-          nextPage(3000); // 等待3秒進入下一頁
+          nextPage(1000); // 等待3秒進入下一頁
         };
         choicesDiv.appendChild(btn);
       });
