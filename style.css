@@ -1,0 +1,56 @@
+body {
+  font-family: "微軟正黑體", sans-serif;
+  background: linear-gradient(#1e1e2f, #3a3a5a);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#game {
+  width: 90%;
+  max-width: 600px;
+  background-color: #2b2b3c;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px #aaa;
+}
+
+#npc {
+  background: #3d3d5c;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#story {
+  margin: 20px 0;
+}
+
+#choices button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  background: #5a5ad8;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#nextBtn {
+  margin-top: 10px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
