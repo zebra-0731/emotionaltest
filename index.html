@@ -8,21 +8,12 @@
 </head>
 <body>
   <div id="game">
-    <div id="npc">
-      🧙‍♂️ <span id="npcText">歡迎，新手巫師...</span>
-    </div>
-
-    <div id="story">
-      <p id="storyText">你一覺醒來，發現自己躺在一張古老的木床上...</p>
-    </div>
-
-    <div id="choices">
-      <!-- 選項將由 JS 動態產生 -->
-    </div>
-
+    <div id="npc">🧙‍♂️ <span id="npcText">準備好成為巫師了嗎？</span></div>
+    <div id="story"><p id="storyText">請點選「下一步」開始冒險。</p></div>
+    <div id="choices"></div>
     <button id="nextBtn" onclick="nextPage()">下一步</button>
   </div>
-
+  <script src="results.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
