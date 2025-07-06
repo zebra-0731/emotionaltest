@@ -1,3 +1,4 @@
+
 const pages = [
   {
     story: "你醒來發現身處魔法學院的宿舍…",
@@ -5,33 +6,43 @@ const pages = [
     options: null
   },
   {
-    story: "任務佈告欄上有四項任務，你會選哪個？",
-    npc: "選一項任務，揭開你的潛能。",
+    story: "任務佈告欄上飄浮著四張卷軸，你會選哪一張？",
+    npc: "每一卷軸都將改變你的未來。",
     options: [
-      { text: "✨ 語言魔法師", value: "語靈使者" },
-      { text: "📸 魔法網紅", value: "星燦引流者" },
-      { text: "🏰 系統設計者", value: "魔訊主控師" },
-      { text: "📹 音聲導師", value: "迴響語咒師" }
+      { text: "✨ 動口就可觸發改變", value: "語靈使者" },
+      { text: "📸 成為魔法界大網紅", value: "星燦引流者" },
+      { text: "🏰 成為魔法導師", value: "迴響探索師" },
+      { text: "📹 活動策劃主辦人", value: "魔訊主辦師" }
     ]
   },
   {
-    story: "你遇到挑戰時會？",
-    npc: "做出選擇，測試你的特質。",
+    story: "你面對未知時會怎麼做？",
+    npc: "你面對試煉的第一步是什麼？",
     options: [
-      { text: "🔍 觀察與思考", value: "理性" },
-      { text: "⚡ 直接行動", value: "衝勁" },
-      { text: "🧠 尋求協助", value: "合作" },
-      { text: "🌙 憑直覺前進", value: "直覺" }
+      { text: "🔍 觀察周圍", value: "迴響探索師" },
+      { text: "⚡ 直接行動", value: "魔訊主辦師" },
+      { text: "🧠 詢問他人", value: "星燦引流者" },
+      { text: "🌙 憑直覺前進", value: "語靈使者" }
     ]
   },
   {
-    story: "你最想擁有哪種魔法？",
-    npc: "你的內在渴望，是你的力量來源。",
+    story: "你喚醒了魔法，哪項天賦最吸引你？",
+    npc: "你的內在魔法會是什麼？",
     options: [
-      { text: "🗣️ 語言控制術", value: "語靈使者" },
-      { text: "🛠️ 能量建構", value: "魔訊主控師" },
-      { text: "💫 魅力操控", value: "星燦引流者" },
-      { text: "🎤 語聲魔咒", value: "迴響語咒師" }
+      { text: "語言魔法", value: "語靈使者" },
+      { text: "能量建構", value: "迴響探索師" },
+      { text: "魅力吸引", value: "星燦引流者" },
+      { text: "頂天之術", value: "魔訊主辦師" }
+    ]
+  },
+  {
+    story: "你要進入『命運之夜』前，必須獻出一樣物品…",
+    npc: "內在的力量即將顯現。",
+    options: [
+      { text: "📓 筆記本", value: "迴響探索師" },
+      { text: "🪞 魔鏡", value: "語靈使者" },
+      { text: "📱 魔法手機", value: "星燦引流者" },
+      { text: "🧩 命運拼圖", value: "魔訊主辦師" }
     ]
   }
 ];
@@ -59,7 +70,7 @@ function nextPage(delay = 0) {
         btn.onclick = () => {
           answers[pageIndex] = option.value;
           pageIndex++;
-          nextPage(1000); // 等待3秒進入下一頁
+          nextPage(3000);
         };
         choicesDiv.appendChild(btn);
       });
@@ -78,13 +89,17 @@ function showResult() {
   });
   const sorted = Object.entries(count).sort((a, b) => b[1] - a[1]);
   const result = sorted[0][0];
+  const data = characterResults[result];
 
-  document.getElementById("storyText").innerText = `你是：${result}`;
-  document.getElementById("npcText").innerText = "你的魔法之路，正式開始。";
+  document.getElementById("storyText").innerHTML = `<h2>你是：${data.name}</h2>
+    <p>${data.role}</p><p>${data.desc}</p>
+    <img src="${data.image}" width="100%" />
+    <p><a href="${data.link}" target="_blank">👉 點我看展板</a></p>
+    <p>🎁 集滿章節可至展板區兌換禮物！</p>`;
+  document.getElementById("npcText").innerText = "你的命運之輪完成了。";
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
 
-  // ✅ 增加回首頁按鈕
   const restartBtn = document.createElement("button");
   restartBtn.innerText = "🔁 回首頁";
   restartBtn.onclick = () => {
@@ -100,17 +115,14 @@ function showResult() {
 }
 
 function sendResultToBackend(result, answers) {
-  fetch("https://script.google.com/macros/s/AKfycbyVDv9X7LZGkzkY4nZ8x7oO6Gg_fjjE4vYr_jCri6orBPQPrAvXuZfj9TzgcGsCGvwT/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxJ--deU0iFNcQHr-ZdqJfAeuk5UPF09LtWfQgjtqYVR5-aOnBqTj6p2BxQ42dGVnTq/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       result: result,
       selections: answers
     })
-  })
-    .then(res => res.ok ? console.log("✅ 成功送出結果") : console.error("❌ 傳送失敗"))
+  }).then(res => res.ok ? console.log("✅ 傳送成功") : console.error("❌ 傳送失敗"))
     .catch(err => console.error("❌ 錯誤發生", err));
 }
 
