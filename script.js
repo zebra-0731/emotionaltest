@@ -69,7 +69,7 @@ function nextPage(delay = 0) {
         btn.onclick = () => {
           answers[pageIndex] = option.value;
           pageIndex++;
-          nextPage(1000);
+          nextPage();
         };
         choicesDiv.appendChild(btn);
       });
