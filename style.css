@@ -46,7 +46,7 @@ body {
 }
 #resultImage {
   width: 15%;
-  max-width: 30px;
+  max-width: 50px;
   height: auto;
   display: block;
   margin: 20px auto;
