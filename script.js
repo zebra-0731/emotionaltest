@@ -92,7 +92,7 @@ function showResult() {
 
   document.getElementById("storyText").innerHTML = `<h2>你是：${data.name}</h2>
     <p>${data.role}</p><p>${data.desc}</p>
-    <img src="${data.image}" width="100%" />
+    <img src="${data.image}" width="5%" />
     <p><a href="${data.link}" target="_blank">👉 點我看展板</a></p>
     <p>🎁 集點卡集滿後可至展板區兌換小禮物！</p>`;
   document.getElementById("npcText").innerText = "你的命運之輪完成了。";
