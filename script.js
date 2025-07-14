@@ -108,7 +108,7 @@ function showResult() {
   };
   choicesDiv.appendChild(restartBtn);
 
-  document.getElementById("nextBtn").style.display = "none";
+  // document.getElementById("nextBtn").style.display = "none";
 
   // sendResultToBackend(result, answers);
 }
