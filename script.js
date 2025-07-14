@@ -110,19 +110,19 @@ function showResult() {
 
   document.getElementById("nextBtn").style.display = "none";
 
-  sendResultToBackend(result, answers);
+  // sendResultToBackend(result, answers);
 }
 
-function sendResultToBackend(result, answers) {
-  fetch("https://script.google.com/macros/s/AKfycbxJ--deU0iFNcQHr-ZdqJfAeuk5UPF09LtWfQgjtqYVR5-aOnBqTj6p2BxQ42dGVnTq/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      result: result,
-      selections: answers
-    })
-  }).then(res => res.ok ? console.log("✅ 傳送成功") : console.error("❌ 傳送失敗"))
-    .catch(err => console.error("❌ 錯誤發生", err));
-}
+// function sendResultToBackend(result, answers) {
+//   fetch("https://script.google.com/macros/s/AKfycbxJ--deU0iFNcQHr-ZdqJfAeuk5UPF09LtWfQgjtqYVR5-aOnBqTj6p2BxQ42dGVnTq/exec", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       result: result,
+//       selections: answers
+//     })
+//   }).then(res => res.ok ? console.log("✅ 傳送成功") : console.error("❌ 傳送失敗"))
+//     .catch(err => console.error("❌ 錯誤發生", err));
+// }
 
 nextPage();
