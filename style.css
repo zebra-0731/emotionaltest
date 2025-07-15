@@ -28,11 +28,17 @@ body {
   background: #5a5ad8;
   color: white;
   padding: 10px;
+  font-size: 20px;              /* ✅ 字體變大 */
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   margin: 5px 0;
   width: 100%;
   cursor: pointer;
+  transition: background 0.3s;
+}
+#choices button:hover {
+  background: #7777ff;
 }
 #nextBtn {
   margin-top: 10px;
@@ -42,7 +48,10 @@ body {
   background: #28a745;
   color: white;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 #resultImage {
   width: 15%;
