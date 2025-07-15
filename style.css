@@ -53,6 +53,9 @@ body {
   cursor: pointer;
   transition: background 0.3s;
 }
+#nextBtn:hover {
+  background: #36c75f;
+}
 #resultImage {
   width: 15%;
   max-width: 200px;
