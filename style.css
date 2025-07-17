@@ -1,4 +1,5 @@
 body {
+  /*all webpage body*/
   font-family: "微軟正黑體", sans-serif;
   background: #121e2b;
   color: white;
@@ -17,16 +18,19 @@ body {
   box-shadow: 0 0 20px #555;
 }
 #npc {
+  /*NPC background*/
   background: #3d3d6b;
   padding: 10px;
   border-radius: 8px;
 }
 #story {
+  /*Question*/
   margin: 20px 0;
   font-size: 20px;         /* ✅ 題目字體大小 */
   line-height: 1.6;        /* ✅ 行距更好讀 */
 }
 #choices button {
+  /*emotionaltest choices button*/
   background: #5a5ad8;
   color: white;
   padding: 10px;
@@ -42,7 +46,8 @@ body {
 #choices button:hover {
   background: #7777ff;
 }
-#nextBtn {
+#nextBtn { 
+  /*next button*/
   margin-top: 10px;
   padding: 10px;
   width: 100%;
