@@ -99,14 +99,13 @@ function showResult() {
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
 
-  const restartBtn = document.createElement("button");
-  restartBtn.innerText = "🔁 回首頁";
-  restartBtn.onclick = () => {
-    pageIndex = 0;
-    answers = {};
-    nextPage();
-  };
-  choicesDiv.appendChild(restartBtn);
+const restartBtn = document.createElement("button");
+restartBtn.innerText = "搶先報名第五屆校園大使說明會";
+restartBtn.classList.add("cta");
+restartBtn.onclick = () => {
+  window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank");
+};
+choicesDiv.appendChild(restartBtn);
 
   // document.getElementById("nextBtn").style.display = "none";
 
