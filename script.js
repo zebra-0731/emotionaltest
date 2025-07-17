@@ -91,10 +91,10 @@ function showResult() {
   const data = characterResults[result];
 
   document.getElementById("storyText").innerHTML = `<h2>你是：${data.name}</h2>
-    <img src="${data.image}" width="15%" />
-    <p>${data.desc}</p>
-    <h3>快到 <span class="highlight">校園大使展覽區</span> 看看你的 <span class="highlight"> 代表人物</span>是誰？</h3>
-    <h4>別忘了將<span class="highlight">本結果頁</span>與<span class="highlight">集點卡</span>一起交給展區工作人員，兌換精美小禮物喔！</h4>`;
+    <img src="${data.image}" width="100%" />
+    <h5>${data.desc}</h5>
+    <h4>快到 <span class="highlight">校園大使展覽區</span> 看看你的 <span class="highlight"> 代表人物</span>是誰？</h3>
+    <h5>別忘了將<span class="highlight">本結果頁</span>與<span class="highlight">集點卡</span>一起交給展區工作人員，兌換精美小禮物喔！</h4>`;
   document.getElementById("npcText").innerText = "你的命運之輪完成了。";
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
