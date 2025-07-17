@@ -99,7 +99,7 @@ function showResult() {
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
 
-const restartBtn = document.createElement("button");
+const restartBtn = document.createElement("button.cta");
 restartBtn.innerText = "搶先報名第五屆校園大使說明會";
 restartBtn.classList.add("cta");
 restartBtn.onclick = () => {
