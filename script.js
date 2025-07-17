@@ -98,14 +98,23 @@ function showResult() {
   document.getElementById("npcText").innerText = "你的命運之輪完成了。";
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
+  
 
-const restartBtn = document.createElement("button.cta");
-restartBtn.innerText = "搶先報名第五屆校園大使說明會";
-restartBtn.classList.add("cta");
-restartBtn.onclick = () => {
-  window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank");
-};
-choicesDiv.appendChild(restartBtn);
+  const restartBtn = document.createElement("button");
+  restartBtn.innerText = "搶先報名第五屆校園大使說明會";
+  restartBtn.classList.add("cta"); // ✅ 關鍵：套用 .cta 樣式
+  restartBtn.onclick = () => {
+    window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank");
+  };
+  choicesDiv.appendChild(restartBtn);
+
+  // const restartBtn = document.createElement("button");
+  // restartBtn.innerText = "搶先報名第五屆校園大使說明會";
+  // // ✅ 改成點擊跳轉外部網址
+  // restartBtn.onclick = () => {
+  //   window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank"); // 請把網址換成你自己的
+  // };
+  // choicesDiv.appendChild(restartBtn);
 
   // document.getElementById("nextBtn").style.display = "none";
 
