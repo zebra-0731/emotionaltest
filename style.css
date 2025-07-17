@@ -79,7 +79,22 @@ body {
   font-weight: bold;
   font-size: 1.1em;
 }
+button {
+  background-color: #5a5ad8;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background 0.3s ease;
+}
 
+button:hover {
+  background-color: #ffe27f;
+}
 button.cta {
   background: #fedd61;
   color: #333;
@@ -91,8 +106,4 @@ button.cta {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: background 0.3s;
-}
-
-button.cta:hover {
-  background: #ffe27f;
 }
