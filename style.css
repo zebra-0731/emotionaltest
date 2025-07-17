@@ -95,18 +95,21 @@ body {
 .button:hover {
   background-color: #fedd61;
 }
-.button.cta {
-  background: #fedd61;
-  color: #333;
+button.cta {
+  background-color: #fedd61;         /* 黃色背景 */
+  color: #4c2f91;                    /* 紫色文字 */
+  font-size: 18px;
   font-weight: bold;
-  font-size: 16px;
-  padding: 14px 24px;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  transition: background 0.3s ease;
 }
-.button.cta:hover {
+
+button.cta:hover {
   background-color: #ffe480;
+  color: #3a2571;
 }
