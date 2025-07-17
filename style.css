@@ -74,3 +74,20 @@ body {
   font-weight: bold;
   font-size: 1.1em;
 }
+
+button.cta {
+  background: #fedd61;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.cta:hover {
+  background: #ffe27f;
+}
