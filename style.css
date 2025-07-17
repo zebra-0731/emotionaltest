@@ -68,3 +68,9 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
+
+.highlight {
+  color: #fedd61;
+  font-weight: bold;
+  font-size: 1.1em;
+}
