@@ -93,7 +93,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffe27f;
+  background-color: #7777ff;
 }
 button.cta {
   background: #fedd61;
@@ -106,4 +106,7 @@ button.cta {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: background 0.3s;
+}
+button.cta:hover {
+  background-color: #ffe480;
 }
