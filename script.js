@@ -91,13 +91,16 @@ function showResult() {
   const data = characterResults[result];
 
   document.getElementById("storyText").innerHTML = `<h2>你是：${data.name}</h2>
-    <p>${data.role}</p><p>${data.desc}</p>
     <img src="${data.image}" width="15%" />
-    <h3>🎁 集點卡集滿後可至展板區兌換小禮物！</h3>`;
+    // <p>${data.role}</p>
+    <p>${data.desc}</p>
+    // <img src="${data.image}" width="15%" />
+    <h3>快到校園大使展覽區看看你的代表人物是誰？</h3>
+    <h4>別忘了將本結果頁與集點卡一起交給展區工作人員，兌換精美小禮物喔！</h4>`;
   document.getElementById("npcText").innerText = "你的命運之輪完成了。";
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
-
+  
   const restartBtn = document.createElement("button");
   restartBtn.innerText = "🔁 回首頁";
   restartBtn.onclick = () => {
