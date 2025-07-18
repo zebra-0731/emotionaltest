@@ -20,7 +20,7 @@ body {
 #npc {
   /*NPC background*/
   background: #3d3d6b; /*NPC block background*/
-  padding: 5px;
+  padding: 10px;          /*NPC block height*/
   border-radius: 8px;
 }
 #story {
