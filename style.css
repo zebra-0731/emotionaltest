@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 #game {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   background: #2a2f4d;
   border-radius: 12px;
@@ -20,7 +20,7 @@ body {
 #npc {
   /*NPC background*/
   background: #3d3d6b; /*NPC block background*/
-  padding: 10px;          /*NPC block height*/
+  padding: 20px;          /*NPC block height*/
   border-radius: 8px;
 }
 #story {
