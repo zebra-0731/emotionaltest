@@ -108,14 +108,14 @@ function showResult() {
   };
   choicesDiv.appendChild(Registration);
 
-  const restartBtn = document.createElement("button");
-  restartBtn.innerText = "🔁 回首頁";
-  restartBtn.onclick = () => {
-    pageIndex = 0;
-    answers = {};
-    nextPage();
-  };
-  choicesDiv.appendChild(restartBtn);
+  // const restartBtn = document.createElement("button");
+  // restartBtn.innerText = "🔁 回首頁";
+  // restartBtn.onclick = () => {
+  //   pageIndex = 0;
+  //   answers = {};
+  //   nextPage();
+  // };
+  // choicesDiv.appendChild(restartBtn);
 
   // const restartBtn = document.createElement("button");
   // restartBtn.innerText = "搶先報名第五屆校園大使說明會";
