@@ -19,8 +19,8 @@ body {
 }
 #npc {
   /*NPC background*/
-  background: #3d3d6b;
-  padding: 10px;
+  background: #3d3d6b; /*NPC block background*/
+  padding: 5px;
   border-radius: 8px;
 }
 #story {
