@@ -68,9 +68,8 @@ body {
   width: 50%;
   max-width: 250px;
   height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  display: block;         /* ✅ 讓 margin auto 能作用 */
+  margin: 20px auto;      /* ✅ 水平置中 */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   object-fit: cover;
