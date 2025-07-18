@@ -100,11 +100,20 @@ function showResult() {
   choicesDiv.innerHTML = "";
   
 
-  const restartBtn = document.createElement("button");
-  restartBtn.innerText = "搶先報名第五屆校園大使說明會";
-  restartBtn.classList.add("cta"); // ✅ 關鍵：套用 .cta 樣式
-  restartBtn.onclick = () => {
+  const Registration = document.createElement("button");
+  Registration.innerText = "搶先報名第五屆校園大使說明會";
+  Registration.classList.add("cta"); // ✅ 關鍵：套用 .cta 樣式
+  Registration.onclick = () => {
     window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank");
+  };
+  choicesDiv.appendChild(Registration);
+
+  const restartBtn = document.createElement("button");
+  restartBtn.innerText = "🔁 回首頁";
+  restartBtn.onclick = () => {
+    pageIndex = 0;
+    answers = {};
+    nextPage();
   };
   choicesDiv.appendChild(restartBtn);
 
