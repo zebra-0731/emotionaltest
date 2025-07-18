@@ -80,7 +80,7 @@ body {
   font-weight: bold;
   font-size: 1.1em;
 }
-.button {
+#button {
   background: #fedd61;
   color: #333;
   font-weight: bold;
@@ -93,10 +93,10 @@ body {
   transition: background 0.3s;
 }
 
-.button:hover {
+#button:hover {
   background-color: #fedd61;
 }
-button.cta {
+#button.cta {
   background-color: #fedd61;         /* 黃色背景 */
   color: #4c2f91;                    /* 紫色文字 */
   font-size: 18px;
@@ -110,7 +110,7 @@ button.cta {
   transition: background 0.3s ease;
 }
 
-button.cta:hover {
+#button.cta:hover {
   background-color: #ffe480;
   color: #3a2571;
 }
