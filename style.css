@@ -64,12 +64,24 @@ body {
 #nextBtn:hover {
   background: #36c75f;
 }
-#resultImage {
+#resultArea {
+  text-align: center; /* ✅ 所有內部 inline 元素水平置中 */
+}
+/* #resultImage {
   width: 50%;
   max-width: 250px;
   height: auto;
-  display: block;         /* ✅ 讓 margin auto 能作用 */
-  margin: 20px auto;      /* ✅ 水平置中 */
+  display: block;          ✅ 讓 margin auto 能作用 
+  margin: 20px auto;      /* ✅ 水平置中 
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}*/
+#resultImage { 
+  width: 50%;
+  max-width: 250px;
+  height: auto;
+  display: block;     /* 或 block 皆可 */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   object-fit: cover;
