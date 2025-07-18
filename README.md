@@ -1,1 +1,1 @@
-test in desktop
+This repository is provided for the Paramitas Education Association to use for the event on July 20.
