@@ -48,9 +48,10 @@ const pages = [
   }
 ];
 
+//define PageIndex and Answer are 0, but change is webpage a button
 let pageIndex = 0;
 let answers = {};
-
+//define of function of nextpage, and define final page change your showResult
 function nextPage(delay = 0) {
   setTimeout(() => {
     if (pageIndex >= pages.length) {
@@ -59,9 +60,9 @@ function nextPage(delay = 0) {
     }
 
     const page = pages[pageIndex];
-    document.getElementById("storyText").innerText = page.story;
-    document.getElementById("npcText").innerText = page.npc;
-    const choicesDiv = document.getElementById("choices");
+    document.getElementById("storyText").innerText = page.story; //StoryText style
+    document.getElementById("npcText").innerText = page.npc;     //NPCText style
+    const choicesDiv = document.getElementById("choices");       //define choice button
     choicesDiv.innerHTML = "";
 
     if (page.options) {
@@ -100,8 +101,6 @@ function showResult() {
   document.getElementById("npcText").innerText = "你的命運之輪完成了。";
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
-  
-
   const Registration = document.createElement("button");
   Registration.innerText = "搶先報名第五屆校園大使說明會";
   Registration.classList.add("cta"); // ✅ 關鍵：套用 .cta 樣式
@@ -109,39 +108,5 @@ function showResult() {
     window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank");
   };
   choicesDiv.appendChild(Registration);
-
-  // const restartBtn = document.createElement("button");
-  // restartBtn.innerText = "🔁 回首頁";
-  // restartBtn.onclick = () => {
-  //   pageIndex = 0;
-  //   answers = {};
-  //   nextPage();
-  // };
-  // choicesDiv.appendChild(restartBtn);
-
-  // const restartBtn = document.createElement("button");
-  // restartBtn.innerText = "搶先報名第五屆校園大使說明會";
-  // // ✅ 改成點擊跳轉外部網址
-  // restartBtn.onclick = () => {
-  //   window.open("https://fmp.wizigo.tw/fmi/webd/Envoyrecruit5", "_blank"); // 請把網址換成你自己的
-  // };
-  // choicesDiv.appendChild(restartBtn);
-
-  // document.getElementById("nextBtn").style.display = "none";
-
-  // sendResultToBackend(result, answers);
 }
-
-// function sendResultToBackend(result, answers) {
-//   fetch("https://script.google.com/macros/s/AKfycbxJ--deU0iFNcQHr-ZdqJfAeuk5UPF09LtWfQgjtqYVR5-aOnBqTj6p2BxQ42dGVnTq/exec", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({
-//       result: result,
-//       selections: answers
-//     })
-//   }).then(res => res.ok ? console.log("✅ 傳送成功") : console.error("❌ 傳送失敗"))
-//     .catch(err => console.error("❌ 錯誤發生", err));
-// }
-
 nextPage();
