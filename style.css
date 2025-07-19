@@ -85,7 +85,7 @@ body {
   object-fit: cover;
 }*/
 #resultImage { 
-  width: 50%;
+  width: 80%;
   max-width: 250px;
   height: auto;
   display: block;     /* 或 block 皆可 */
@@ -97,7 +97,7 @@ body {
 .highlight {
   color: #fedd61;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 20 px;
 }
 #button {
   background: #fedd61;
