@@ -22,7 +22,7 @@ body {
   background: #3d3d6b; /*NPC block background*/
   padding: 20px;          /*NPC block height*/
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: bold;      /*NPC block font weight*/
 }
 #npcText {
   background-color: #3d3d6b;
